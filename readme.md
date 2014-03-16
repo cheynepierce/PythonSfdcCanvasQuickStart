@@ -4,11 +4,18 @@
 This is a basic Python web app, written using [Flask](http://flask.pocoo.org/) and the [SalesforceCanvasFrameworkSDK](https://github.com/forcedotcom/SalesforceCanvasFrameworkSDK). You can use it to get a Salesforce Canvas app using Python up and running quickly.
 
 ##Basic Setup
-First, ensure you have [pip](https://pypi.python.org/pypi/pip) and [virtualenv](https://pypi.python.org/pypi/virtualenv) installed. Create a directory for your project and create a virtualenv in it.
+First, ensure you have [pip](https://pypi.python.org/pypi/pip) and [virtualenv](https://pypi.python.org/pypi/virtualenv) installed. Create a directory for your project and clone the repository into that directory. Then, create a virtualenv in it.
 
 ```
-mkdir flask-canvas
-cd flask-canvas
+git clone https://github.com/cheynepierce/PythonSfdcCanvasQuickStart.git
+cd PythonSfdcCanvasQuickStart
+git submodule init
+git submodule update
+```
+
+Now, create a Python virtualenv
+
+```
 virtualenv venv
 source venv/bin/activate
 ```
@@ -18,8 +25,6 @@ Next, install dependencies using pip:
 ```
 pip install Flask gunicorn
 ```
-
-Now, go ahead and clone the repository into that directory.
 
 ##Deploy to Heroku
 You can deploy this app anywhere you want and it will be able to run on Force.com Canvas, as long as it has an https endpoint. To deploy to Heroku, do the following:
