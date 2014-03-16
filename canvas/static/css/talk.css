@@ -18,17 +18,6 @@
     /*background: #ebf4fb;*/
 }
 
-#speech-input-field {
-    width: 400px;
-    height: 25px;
-    padding: 10px 15px;
-    margin-top: 20px;
-    font-size: 100%;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    outline: 0;
-}
-
 button {
     clear: both;
     width: 48px;
