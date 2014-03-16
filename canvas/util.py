@@ -9,17 +9,17 @@ class SignedRequest:
 
     def verifyAndDecode(self):
         if self.secret == None:
-            return None
+            raise Exception('Secret is null')
         if self.sr == None:
-            return None
+            raise Exception('Signed request is null')
         array = self.sr.split('.')
         if len(array) != 2:
-            return None
+            raise Exception('Signed request is formatted incorrectly')
     
         signature = array[0]
         payload = array[1]
         decodedSignature = base64.b64decode(signature)
         h = hmac.new(self.secret, msg=payload, digestmod=hashlib.sha256).digest()
         if decodedSignature != h:
-            return 'the request has been tampered with'
+            raise Exception('the request has been tampered with')
         return base64.b64decode(payload)
