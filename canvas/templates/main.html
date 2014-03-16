@@ -4,7 +4,10 @@
 		<title>Flask!</title>
 		<!-- Include all the canvas JS dependencies in one file -->
 		<script type="text/javascript" src="/static/js/canvas-all.js"></script>
+		
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/static/css/canvas.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/talk.css"/>
 	</head>
 	<body>
 		<script>
@@ -37,6 +40,26 @@
 				}
 			}
 		);
+		
+		$("#chatter-submit").click(function(e) {
+			e.preventDefault();
+			
+			var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
+			var postText = $("#speech-input-field").val();
+			var body = {body : {messageSegments : [{type: "Text", text: postText}]}};
+			Sfdc.canvas.client.ajax(url, 
+				{client: sr.client,
+					method: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify(body),
+					success: function(data) {
+						if (data.status === 201) {
+							$("#status").text('Posted!');
+						}
+					}
+				}
+			);
+		});
     });
 
 </script>
