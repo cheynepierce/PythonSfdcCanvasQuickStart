@@ -17,6 +17,6 @@ def main():
 def callback():
     return render_template('callback.html')
 	
-@app.errorHandler(500)
+@app.errorhandler(500)
 def serverError(e):
     return render_template('500.html'), 500
