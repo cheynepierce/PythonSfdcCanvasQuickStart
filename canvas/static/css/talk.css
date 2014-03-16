@@ -20,7 +20,7 @@
 
 #speech-input-field {
     width: 400px;
-    height: 50px;
+    height: 25px;
     padding: 10px 15px;
     margin-top: 20px;
     font-size: 100%;
@@ -33,5 +33,5 @@ button {
     clear: both;
     width: 48px;
     height:24px;
-    background: #666666 url(/examples/chatter-talk/share.png) no-repeat;
+    background: #666666 url(../img/share.png) no-repeat;
 }
