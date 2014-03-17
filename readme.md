@@ -4,7 +4,7 @@
 This is a basic Python web app, written using [Flask](http://flask.pocoo.org/) and the [SalesforceCanvasFrameworkSDK](https://github.com/forcedotcom/SalesforceCanvasFrameworkSDK). You can use it to get a Salesforce Canvas app using Python up and running quickly.
 
 ###Basic Setup
-First, ensure you have [pip](https://pypi.python.org/pypi/pip) and [virtualenv](https://pypi.python.org/pypi/virtualenv) installed. Create a directory for your project and clone the repository into that directory. Then, create a virtualenv in it.
+First, ensure you have [pip](https://pypi.python.org/pypi/pip) and [virtualenv](https://pypi.python.org/pypi/virtualenv) installed. Create a directory for your project and clone the repository into that directory.
 
 ```
 git clone https://github.com/cheynepierce/PythonSfdcCanvasQuickStart.git
