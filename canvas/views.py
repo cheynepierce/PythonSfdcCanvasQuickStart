@@ -1,8 +1,6 @@
 import os
 from canvas import app
-
 from flask import Flask, render_template, request
-
 from util import SignedRequest
 
 @app.route('/', methods=['POST', 'GET'])
