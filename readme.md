@@ -37,7 +37,7 @@ git push heroku master
 After committing changes, you can always do "git push heroku master" again to deploy the changes.
 
 ###Create a Salesforce Connected App
-To set up the Canvas app, log into your Salesforce development environment, and go to Setup -> Create -> Apps, scroll down to the connected apps section, and create a new conencted app. Under the API section, check the box to "Enable OAuth Settings." Set the callback URL to "https://<yourAppDomain>/callback.html". Under Canvas App Settings, check the "Force.com Canvas" box. Set the Canvas App URL to "https://<yourAppDomain>/". 
+To set up the Canvas app, log into your Salesforce development environment, and go to Setup -> Create -> Apps, scroll down to the connected apps section, and create a new conencted app. Under the API section, check the box to "Enable OAuth Settings." Set the callback URL to "https://yourAppDomain/callback.html". Under Canvas App Settings, check the "Force.com Canvas" box. Set the Canvas App URL to "https://yourAppDomain/". 
 
 Click Create. Once your app is created, copy the app's Consumer Secret. Create an environment variable called CANVAS_CONSUMER_SECRET and set it to this value. If your app is running on Heroku, you can do this as follows:
 
