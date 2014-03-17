@@ -5,7 +5,6 @@
 		<!-- Include all the canvas JS dependencies in one file -->
 		<script type="text/javascript" src="/static/js/canvas-all.js"></script>
 		
-		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="/static/css/canvas.css"/>
 		<link rel="stylesheet" type="text/css" href="/static/css/talk.css"/>
 	</head>
@@ -40,27 +39,6 @@
 				}
 			}
 		);
-		
-		$("#chatter-submit").click(function(e) {
-			e.preventDefault();
-			
-			var url = sr.context.links.chatterFeedsUrl+"/news/"+sr.context.user.userId+"/feed-items";
-			var postText = $("#speech-input-field").val();
-			var body = {body : {messageSegments : [{type: "Text", text: postText}]}};
-			Sfdc.canvas.client.ajax(url, 
-				{client: sr.client,
-					method: 'POST',
-					contentType: 'application/json',
-					data: JSON.stringify(body),
-					success: function(data) {
-						if (data.status === 201) {
-							$("#status").text('Posted!');
-							$("#speech-input-field").val('');
-						}
-					}
-				}
-			);
-		});
     });
 
 </script>
@@ -91,16 +69,6 @@
 	            <td colspan="3"><b>Company: </b><span id='company'></span></td>
 	        </tr>
        </table>
-    </div>
-    <div id="canvas-chatter">
-      <table border="0" width="100%">
-        <tr>
-          <td width="15%"><b>Post to Chatter:&nbsp</b></td>
-          <td width="65%"><input id="speech-input-field" type="text" x-webkit-speech/></td>
-          <td width="6%"><button id="chatter-submit" type="submit"/></td>
-          <td width="10%"><span id="status" style="color:green"></span></td>
-        </tr>
-      </table>
     </div>
 
     </div>
